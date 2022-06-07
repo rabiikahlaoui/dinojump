@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,9 @@
     <title>DinoJump</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
     <div class="container">
         <div class="player"></div>
         <p id="score"></p>
@@ -25,7 +28,24 @@
             <div class="grid-item" id="9" onclick="mintOrSelect(this);"></div>
             <div class="grid-item" id="10" onclick="mintOrSelect(this);"></div>
         </div>
+
     </div>
+
+    <script>
+        const player1 = document.getElementsByClassName("player")[0]
+        let currentSkin = localStorage.getItem("currentSkin");
+
+        const att = document.createAttribute("style");
+        att.value = `content:url(${currentSkin})`
+        player1.setAttributeNode(att);
+    </script>
+
+    <button onclick="connectMetamask()">connect wallet</button>
+
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
     <script src="index.js"></script>
+    <script src="blockchain.js"></script>
+
 </body>
+
 </html>
